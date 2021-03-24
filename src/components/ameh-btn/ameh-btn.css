@@ -1,0 +1,29 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+--color-primary: --pink-600; */
+
+.btn {
+  @apply cursor-pointer font-semibold shadow-2xl focus:shadow-inner border-none m-1 px-3 py-2 rounded focus:outline-black;
+}
+
+.btn-outline {
+  @apply bg-clip-text text-transparent;
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-pink-500 to-rose-500 hover:from-rose-500 hover:to-pink-500 hover:border-pink-500;
+}
+
+.btn-secondary {
+  @apply bg-gradient-to-br from-green-400 to-cyan-500;
+}
+
+.btn-tertiary {
+  @apply bg-pink-600;
+}
+
+:host(.dark) > .btn-primary {
+  @apply hover:text-white;
+}

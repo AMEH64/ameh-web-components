@@ -1,0 +1,32 @@
+:host {
+  /* @apply p-2 cursor-pointer text-gray-900 font-sans text-sm rounded; */
+  @apply font-bold text-blue-700 p-2 rounded;
+}
+
+:host(.dark) {
+  @apply text-gray-700;
+}
+
+:host(:hover),
+:host(.active) {
+  /* @apply bg-gray-200 text-gray-700; */
+  @apply text-white bg-blue-700;
+}
+
+:host(.dark:hover),
+:host(.dark.active) {
+  @apply bg-gray-800 text-gray-300;
+}
+
+/* 
+.navbar > .navbar-item > i {
+  @apply w-8 p-2 bg-gray-200 dark:bg-gray-800 rounded-full;
+}
+
+.navbar.vertical > .navbar-item {
+  @apply block;
+}
+
+.navbar-logo {
+  @apply px-2 mr-2 border-r border-gray-800;
+} */

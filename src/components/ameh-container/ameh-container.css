@@ -1,0 +1,63 @@
+:host {
+  @apply block h-screen w-auto overflow-auto;
+}
+
+:host(.custom-scrollbar) {
+  scrollbar-color: theme('colors.gray.800') transparent;
+  scrollbar-width: thin;
+}
+
+/* 
+:host(.custom-scrollbar.scroll-auto-hide) {
+  scrollbar-color: transparent transparent;
+}
+
+:host(.custom-scrollbar.scroll-auto-hide:hover) {
+  scrollbar-color: theme('colors.gray.800') transparent;
+} */
+
+:host(.custom-scrollbar::-webkit-scrollbar) {
+  /* width: 18px;
+  height: 18px; */
+  @apply w-4 h-4;
+}
+
+:host(.custom-scrollbar::-webkit-scrollbar-thumb) {
+  @apply bg-gradient-to-br from-pink-500 to-rose-500 hover:from-rose-500 hover:to-pink-500 bg-clip-padding border-4 border-solid border-transparent rounded-full;
+}
+
+:host(.custom-scrollbar::-webkit-scrollbar-corner) {
+  @apply bg-transparent;
+}
+
+:host(.custom-scrollbar::-webkit-scrollbar-thumb:vertical) {
+  @apply h-8 w-full;
+}
+
+:host(.custom-scrollbar::-webkit-scrollbar-thumb:horizontal) {
+  @apply h-full w-8;
+}
+
+/* :host(.custom-scrollbar.scroll-auto-hide::-webkit-scrollbar-thumb) {
+  @apply bg-transparent bg-clip-padding;
+}
+
+:host(.custom-scrollbar.scroll-auto-hide:hover::-webkit-scrollbar-thumb) {
+  @apply bg-gray-800 bg-clip-padding;
+} */
+
+:host(.custom-scrollbar::-webkit-scrollbar-thumb:hover) {
+  /* background: rgba(0,0,0,.3); */
+  @apply bg-gray-900 bg-clip-padding;
+  /* background: var(--palette-black-alpha-30,rgba(0, 0, 0, .3)); */
+  /* background-clip: padding-box; */
+}
+
+:host(.custom-scrollbar-hidden) {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+:host(.custom-scrollbar-hidden::-webkit-scrollbar) {
+  width: 0;
+}

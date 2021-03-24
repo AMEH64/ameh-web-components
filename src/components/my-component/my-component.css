@@ -1,3 +1,12 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
 :host {
   display: block;
+  @apply bg-blue-500 text-white;
+}
+
+:host(:hover) {
+  @apply bg-red-700;
 }

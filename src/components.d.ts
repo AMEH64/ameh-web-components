@@ -6,6 +6,25 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AmehBtn {
+        "color": 'primary' | 'secondary' | 'tertiary';
+        "outline": boolean;
+        "theme": 'light' | 'dark' | 'auto';
+        "type": 'button' | 'reset' | 'submit';
+    }
+    interface AmehContainer {
+    }
+    interface AmehIcon {
+        "icon": string;
+        "size": 'sm' | 'md' | 'lg';
+    }
+    interface AmehNavbar {
+        "placement": 'fixed-top' | 'fixed-bottom' | 'sticky-top';
+        "theme": 'light' | 'dark' | 'auto';
+    }
+    interface AmehNavbarItem {
+        "theme": 'light' | 'dark' | 'auto';
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +41,36 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAmehBtnElement extends Components.AmehBtn, HTMLStencilElement {
+    }
+    var HTMLAmehBtnElement: {
+        prototype: HTMLAmehBtnElement;
+        new (): HTMLAmehBtnElement;
+    };
+    interface HTMLAmehContainerElement extends Components.AmehContainer, HTMLStencilElement {
+    }
+    var HTMLAmehContainerElement: {
+        prototype: HTMLAmehContainerElement;
+        new (): HTMLAmehContainerElement;
+    };
+    interface HTMLAmehIconElement extends Components.AmehIcon, HTMLStencilElement {
+    }
+    var HTMLAmehIconElement: {
+        prototype: HTMLAmehIconElement;
+        new (): HTMLAmehIconElement;
+    };
+    interface HTMLAmehNavbarElement extends Components.AmehNavbar, HTMLStencilElement {
+    }
+    var HTMLAmehNavbarElement: {
+        prototype: HTMLAmehNavbarElement;
+        new (): HTMLAmehNavbarElement;
+    };
+    interface HTMLAmehNavbarItemElement extends Components.AmehNavbarItem, HTMLStencilElement {
+    }
+    var HTMLAmehNavbarItemElement: {
+        prototype: HTMLAmehNavbarItemElement;
+        new (): HTMLAmehNavbarItemElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +78,34 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "ameh-btn": HTMLAmehBtnElement;
+        "ameh-container": HTMLAmehContainerElement;
+        "ameh-icon": HTMLAmehIconElement;
+        "ameh-navbar": HTMLAmehNavbarElement;
+        "ameh-navbar-item": HTMLAmehNavbarItemElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface AmehBtn {
+        "color"?: 'primary' | 'secondary' | 'tertiary';
+        "outline"?: boolean;
+        "theme"?: 'light' | 'dark' | 'auto';
+        "type"?: 'button' | 'reset' | 'submit';
+    }
+    interface AmehContainer {
+    }
+    interface AmehIcon {
+        "icon": string;
+        "size"?: 'sm' | 'md' | 'lg';
+    }
+    interface AmehNavbar {
+        "placement"?: 'fixed-top' | 'fixed-bottom' | 'sticky-top';
+        "theme"?: 'light' | 'dark' | 'auto';
+    }
+    interface AmehNavbarItem {
+        "theme"?: 'light' | 'dark' | 'auto';
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +121,11 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "ameh-btn": AmehBtn;
+        "ameh-container": AmehContainer;
+        "ameh-icon": AmehIcon;
+        "ameh-navbar": AmehNavbar;
+        "ameh-navbar-item": AmehNavbarItem;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +133,11 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "ameh-btn": LocalJSX.AmehBtn & JSXBase.HTMLAttributes<HTMLAmehBtnElement>;
+            "ameh-container": LocalJSX.AmehContainer & JSXBase.HTMLAttributes<HTMLAmehContainerElement>;
+            "ameh-icon": LocalJSX.AmehIcon & JSXBase.HTMLAttributes<HTMLAmehIconElement>;
+            "ameh-navbar": LocalJSX.AmehNavbar & JSXBase.HTMLAttributes<HTMLAmehNavbarElement>;
+            "ameh-navbar-item": LocalJSX.AmehNavbarItem & JSXBase.HTMLAttributes<HTMLAmehNavbarItemElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
